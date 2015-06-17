@@ -1,26 +1,47 @@
 import React from 'react/addons';
-import {Btn, BtnItem, Icon, List, ListItem, Card, CardItem, CardItemHeader, CardItemFooter, CardItemContent, Block, Text, Image} from 'react-essence';
+import {Divider,Btn, BtnItem, Icon, List, ListItem, Card, CardItem, CardItemHeader, CardItemFooter, CardItemContent, Block, Text, Image} from 'react-essence';
 
 
 //document.domain='uc.edu';
 
 var IHNewsFeed = React.createClass({
+
+  getMoreLink(){
+    if (this.props.ncd["news-publication-result"]["section-links"].link!==undefined){
+      return this.props.ncd["news-publication-result"]["section-links"].link.filter((item) => item.viewall === 'yes')[0].text;
+    }
+  },
+
+  handleClick(){
+    //use PeopleSoft function to open URL in modal
+    openContentInModal(this.getMoreLink());
+  },
   render() {
+
+    if (this.props.ncd["news-publication-result"]["section-links"].link!==undefined){
+      var moreButton =
+      <BtnItem
+          classes={'flat e-right'}
+          label='More...'
+          type='default'
+          rippleEffect={true}
+          onClick={this.handleClick}
+      />
+    }
+
     return (
       <div>
-        <Text type='h2'
-          classes={"e-display-3"}
+        <Text classes={'e-display-1'}
+
           >
           {this.props.title}
+          <Divider style={{margin:0}} classes={'thin e-background-black e-no-margin'} />
         </Text>
 
+
+
         <NewsCards data={this.props.ncd["news-publication-result"]["news-publication-top-story"].item} />
-          <BtnItem
-              classes={'flat e-right'}
-              label='More...'
-              type='default'
-              rippleEffect={true}
-          />
+          {moreButton}
       </div>
     );
   }
@@ -30,7 +51,6 @@ var IHNewsFeed = React.createClass({
 var NewsCards = React.createClass({
   render: function() {
     var cardNodes = this.props.data.map(function (cardItem){
-      console.log('card',cardItem);
       return (
         <NewsCardItem data={cardItem}/>
 
