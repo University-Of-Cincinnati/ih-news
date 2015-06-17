@@ -1,0 +1,30 @@
+{
+  "name": "ih-news",
+  "version": "0.0.0",
+  "description": "IH News Module",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress --colors --watch",
+    "build-deploy": "webpack",
+    "start": "webpack-dev-server --progress --colors",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Hartman",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^5.5.8",
+    "babel-loader": "^5.1.4",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "jsx-loader": "^0.13.2",
+    "node-libs-browser": "^0.5.2",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.9.11",
+    "webpack-dev-server": "^1.9.0"
+  },
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-essence": "0.0.15"
+  }
+}

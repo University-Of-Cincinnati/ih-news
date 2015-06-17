@@ -1,0 +1,187 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./lib/css/icons.css" >
+    <link rel="stylesheet" href="./lib/css/essence.css" >
+  </head>
+  <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./build/IHNewsFeed.js" charset="utf-8"></script>
+    <div id="feed"></div>
+
+    <!-- <div id="weather"></div> -->
+    <!-- <div id="course-search"></div> -->
+    <script>
+
+
+      var ihNews = React.createFactory(IHNewsFeed);
+      var ihNewsElement = ihNews(
+        {
+          title: 'Admissions News',
+          ncd:
+          { "news-publication-result": {
+              "id": "1702",
+              "portal": "EMPLOYEE",
+              "news-publication-top-story": {
+                  "item": [
+                      {
+                          "id": "1703",
+                          "image": {
+                              "title": "Oracle Exadata Ready Program Attracts Oracle Partners",
+                              "url": "https://ihdemo2.uc.edu/cs/ps/cache/EPPCM_IMAGEUPLD_GE2TCMY=_GE==_459036582.JPG",
+                              "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1705&PORTALPARAM_AID=1703&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                          },
+                          "title": "Oracle Exadata Ready Program Attracts Oracle Partners",
+                          "description": "Five Oracle Gold Partners have earned Oracle Exadata Ready status for their solutions.",
+                          "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1705&PORTALPARAM_AID=1703&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                      },
+                      {
+                          "id": "1710",
+                          "image": {
+                              "title": "Oracle Buys BlueKai",
+                              "url": "https://ihdemo2.uc.edu/cs/ps/cache/EPPCM_IMAGEUPLD_GE2TCNA=_GE==_459036394.JPG",
+                              "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1704&PORTALPARAM_AID=1710&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                          },
+                          "title": "Oracle Buys BlueKai",
+                          "description": "Oracle today announced that it has signed an agreement to acquire BlueKai, the industry's leading cloud-based big data platform that enables companies to personalize online, offline and mobile marketing campaigns with richer and more actionable information about targeted audiences.",
+                          "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1704&PORTALPARAM_AID=1710&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                      }
+                  ]
+              },
+              "news-required-section-data": {
+                  "news-section": [
+                      {
+                          "id": "1704",
+                          "title": "Investor News",
+                          "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1704&PortalIsPagelet=true",
+                          "item": [
+                              {
+                                  "id": "1709",
+                                  "title": "Oracle Sets the Date for Its Third Quarter Fiscal Year 2014 Earnings Announcement",
+                                  "description": "Earnings Results to Be Released on March 18, 2014, After the Close of the Market",
+                                  "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1704&PORTALPARAM_AID=1709&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                              },
+                              {
+                                  "id": "1711",
+                                  "title": "Oracle Buys Corente",
+                                  "description": "Oracle today announced that it has entered into an agreement to acquire Corente, a leading provider of software-defined networking (SDN) technology for wide area networks (WANs).",
+                                  "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1704&PORTALPARAM_AID=1711&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                              }
+                          ],
+                          "more-link": {
+                              "link": {
+                                  "text": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1704&PortalIsPagelet=true"
+                              }
+                          }
+                      },
+                      {
+                          "id": "1705",
+                          "title": "Partners",
+                          "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1705&PortalIsPagelet=true",
+                          "item": [
+                              {
+                                  "id": "1702",
+                                  "title": "Partners Earn Gold Membership",
+                                  "description": "Two Oracle partners have achieved Gold membership in Oracle PartnerNetwork.",
+                                  "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1705&PORTALPARAM_AID=1702&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                              },
+                              {
+                                  "id": "1704",
+                                  "title": "Oracle names HP as Diamond level partner",
+                                  "description": "Oracle today announced that HP has been named an Oracle PartnerNetwork (OPN) Diamond level partner, the highest ranking available in the OPN Specialized program.",
+                                  "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1705&PORTALPARAM_AID=1704&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                              },
+                              {
+                                  "id": "1705",
+                                  "title": "Oracle Partner TITAN GS Launches Taleo Practice",
+                                  "description": "TITAN GS, an OracleÂ© Platinum Partner and provider of global services in support of Oracle applications, is launching a TaleoÂ© practice offering comprehensive consulting services and Managed Services for both Taleo Enterprise Edition and Taleo Business Edition applications.",
+                                  "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1705&PORTALPARAM_AID=1705&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                              }
+                          ],
+                          "more-link": {
+                              "link": {
+                                  "text": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1705&PortalIsPagelet=true"
+                              }
+                          }
+                      },
+                      {
+                          "id": "1706",
+                          "title": "Technology",
+                          "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1706&PortalIsPagelet=true",
+                          "item": [
+                              {
+                                  "id": "1706",
+                                  "title": "Your Oracle Database in the Cloud",
+                                  "description": "The Oracle Database will be available as a Database-As-A-Service, with your own dedicated instance and direct network connections, or as as full development and deployment platform, as the currently available Database Cloud Service.",
+                                  "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1706&PORTALPARAM_AID=1706&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                              },
+                              {
+                                  "id": "1707",
+                                  "title": "Oracle Joins OpenStack Foundation",
+                                  "description": "OpenStack capabilities will be integrated into a broad range of Oracle products and cloud services.",
+                                  "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1706&PORTALPARAM_AID=1707&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                              },
+                              {
+                                  "id": "1708",
+                                  "title": "Why Would Anyone Want to Be an Architect?",
+                                  "description": "Architects weigh in on what makes their jobs cool.",
+                                  "link": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPART.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1706&PORTALPARAM_AID=1708&PORTALPARAM_PUB=P&PortalIsPagelet=true"
+                              }
+                          ],
+                          "more-link": {
+                              "link": {
+                                  "text": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1706&PortalIsPagelet=true"
+                              }
+                          }
+                      }
+                  ]
+              },
+              "news-section-data": "",
+              "submit-links": {
+                  "link": {
+                      "text": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/SUBMIT_PORTAL_CONTENT.EPPCM_SBMT_CONTNW.GBL?Action=U&IgnoreParamTempl=Page,Action"
+                  }
+              },
+              "section-links": {
+                  "link": [
+                      {
+                          "text": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1705&PortalIsPagelet=true"
+                      },
+                      {
+                          "text": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1704&PortalIsPagelet=true"
+                      },
+                      {
+                          "text": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPSEC.GBL?Page=EPPCM_NWDSPSEC&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PORTALPARAM_CID=1706&PortalIsPagelet=true"
+                      },
+                      {
+                          "text": "https://ihdemo2.uc.edu/psp/ps/EMPLOYEE/EMPL/c/EPPCM_CONTENT_MGMT.EPPCM_NWDSPALL.GBL?Page=EPPCM_NWDSPALL&Action=U&PORTALPARAM_PNM=EMPLOYEE&PORTALPARAM_PID=1702&PortalIsPagelet=true",
+                          "viewall": "yes"
+                      }
+                  ]
+              },
+              "empty_news_message": "No articles currently available",
+              "show_ts_images": "Y",
+              "show_section_links": "Y",
+              "show_feed_links": "Y",
+              "num_articles": "3",
+              "bullet_img": "/cs/ps/cache/BULLET_1.JPG",
+              "new_img": "/cs/ps/cache/PS_EO_PE_NEW_1.gif",
+              "pagelet_width": "Narrow"
+          }
+      }
+    }
+      );
+
+    React.render(ihNewsElement, document.getElementById('feed'));
+
+  </script>
+
+
+
+
+
+  </body>
+</html>
