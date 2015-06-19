@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" encoding="utf-8"/>
-
   <xsl:template match="/*[node()]">
-
-  <xsl:variable name="scname">
+ <xsl:variable name="scname">
     <xsl:value-of select="/NavCollection/@Name"/>
   </xsl:variable>
-
     <script type="text/javascript" src="/js/build/IHNewsFeed.js" charset="utf-8"></script>
     <script type="text/javascript">
 		jQuery(document).ready(function() {
       var ihNews = React.createFactory(IHNewsFeed);
+console.log('factory',ihNews);
       var ihNewsElement = ihNews(
         {
           title: 'Admissions News',
@@ -20,10 +18,11 @@
 							  <xsl:apply-templates select="." mode="detect" />
 						  <xsl:text>}</xsl:text>
         });
+console.log('element',ihNewsElement);
 	React.render(ihNewsElement, document.getElementById('admissions_news_portal'));
-
+});
     </script>
-
+    <div class='e-title'>Admissions News</div>
     <div id="admissions_news_portal">NC</div>
   </xsl:template>
 
@@ -87,20 +86,19 @@
   </xsl:template>
 
       <xsl:template name="escapeQuote">
-      <xsl:param name="pText" select="."/>
+      <xsl:param name="pText" select="normalize-space(.)"/>
 
       <xsl:if test="string-length($pText) >0">
-       <xsl:value-of select=
-        "substring-before(concat($pText, '&quot;'), '&quot;')"/>
+       <xsl:value-of select= "substring-before(concat($pText, '&quot;'), '&quot;')"/>
 
        <xsl:if test="contains($pText, '&quot;')">
         <xsl:text>\"</xsl:text>
 
         <xsl:call-template name="escapeQuote">
-          <xsl:with-param name="pText" select=
-          "substring-after($pText, '&quot;')"/>
+          <xsl:with-param name="pText" select= "substring-after($pText, '&quot;')"/>
         </xsl:call-template>
        </xsl:if>
       </xsl:if>
     </xsl:template>
+
 </xsl:stylesheet>

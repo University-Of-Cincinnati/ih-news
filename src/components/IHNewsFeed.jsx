@@ -31,15 +31,6 @@ var IHNewsFeed = React.createClass({
 
     return (
       <div>
-        <Text classes={'e-display-1'}
-
-          >
-          {this.props.title}
-          <Divider style={{margin:0}} classes={'thin e-background-black e-no-margin'} />
-        </Text>
-
-
-
         <NewsCards data={this.props.ncd["news-publication-result"]["news-publication-top-story"].item} />
           {moreButton}
       </div>
@@ -77,16 +68,15 @@ var NewsCardItem = React.createClass({
     var newsImage = null;
 
     if (cardItem.image !== undefined){
-      newsImage=<Block type="div" classes={"card-main-image"}>
+      newsImage=<Block type="div" classes={"card-main-image e-paper e-background-white"}>
                   <Image src={cardItem.image.url}  alt={cardItem.image.title} />
                 </Block>;
     }
 
     return (
       <Card>
-        <CardItem>
-          {newsImage}
-          <CardItemContent classes={"card-supporting-text e-text-blue-grey-400"}>
+        <CardItem classes={"e-background-white"}>
+          <CardItemContent classes={"card-supporting-text"}>
             <Text type="h2" classes={"e-title"}>
               {cardItem.title}
             </Text>
@@ -94,7 +84,7 @@ var NewsCardItem = React.createClass({
               {cardItem.description}
             </Text>
           </CardItemContent>
-
+          {newsImage}
           <CardItemFooter>
 
             <Block type="div" classes={"e-right"}>
