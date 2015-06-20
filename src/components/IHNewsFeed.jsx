@@ -1,21 +1,6 @@
 import React from 'react/addons';
 
-import {
-  Divider,
-  Btn,
-  BtnItem,
-  Icon,
-  List,
-  ListItem,
-  Card,
-  CardItem,
-  CardItemHeader,
-  CardItemFooter,
-  CardItemContent,
-  Block,
-  Text,
-  Image
-} from 'react-essence';
+import {Divider, Btn, BtnItem, Icon, List, ListItem, Card, CardItem, CardItemHeader, CardItemFooter, CardItemContent, Block, Text, Image} from 'react-essence';
 
 let IHNewsFeed = React.createClass({
   getMoreLink() {
@@ -47,10 +32,9 @@ let IHNewsFeed = React.createClass({
           {moreButton}
       </div>
     );
-  }
+  },
 
 });
-
 
 let NewsCards = React.createClass({
   render: function() {
@@ -65,7 +49,8 @@ let NewsCards = React.createClass({
         {cardNodes}
       </div>
     );
-  }
+  },
+
 });
 
 
@@ -74,6 +59,7 @@ let NewsCardItem = React.createClass({
     //use PeopleSoft function to open URL in modal
     openContentInModal(this.props.data.link);
   },
+
   render: function() {
     let cardItem = this.props.data;
     let newsImage = null;
@@ -112,7 +98,7 @@ let NewsCardItem = React.createClass({
         </CardItem>
       </Card>
     );
-  }
+  },
 
 });
 
