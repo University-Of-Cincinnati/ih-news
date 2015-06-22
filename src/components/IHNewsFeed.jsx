@@ -15,8 +15,10 @@ let IHNewsFeed = React.createClass({
   },
 
   render() {
+    let moreButton = null;
+
     if (this.props.ncd['news-publication-result']['section-links'].link!==undefined){
-      const moreButton =
+      moreButton =
       <BtnItem
           classes={'flat e-right'}
           label='More...'
