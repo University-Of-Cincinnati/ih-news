@@ -40,11 +40,31 @@ let IHNewsFeed = React.createClass({
 
 let NewsCards = React.createClass({
   render: function() {
-    var cardNodes = this.props.data.map((cardItem) => {
-      return (
-        <NewsCardItem data={cardItem}/>
+
+    let cardNodes = [];
+
+    if (this.props.data === undefined){
+      cardNodes.push(
+        <Card>
+          <CardItem classes={'e-background-white e-no-margin e-margin-bottom-15'}>
+            <CardItemContent classes={'card-supporting-text'}>
+              <Text type='h2' classes={'e-title'}>
+                No news found.
+              </Text>
+              <Text type='h4'>
+                Sorry, we were unable to find any news stories.
+              </Text>
+            </CardItemContent>
+          </CardItem>
+        </Card>
       );
-    });
+    } else {
+      cardNodes = this.props.data.map((cardItem) => {
+        return (
+          <NewsCardItem data={cardItem}/>
+        );
+      });
+    }
 
     return (
       <div>
@@ -103,5 +123,6 @@ let NewsCardItem = React.createClass({
   },
 
 });
+
 
 module.exports = IHNewsFeed;
