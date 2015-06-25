@@ -19,7 +19,7 @@ var defaultConfig = {
   module: {
     loaders: [
       {test: /\.css$/,
-        loader: "style-loader!css-loader!cssnext-loader"},
+        loader: ExtractTextPlugin.extract("style-loader","css-loader!cssnext-loader")},
       {test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
       {test: /\.(?:js|jsx)$/,
         exclude: /node_modules/,
@@ -27,8 +27,7 @@ var defaultConfig = {
       {test: /\.(png|jpg)$/,
         loader: 'url-loader?limit=8192'} // inline base64 URLs for <=8k images, direct URLs for the rest
       ]
-  },
-  plugins: []
+  }
 };
 
 module.exports = {

@@ -67,14 +67,15 @@ let NewsCardItem = React.createClass({
     let newsImage = null;
 
     if (cardItem.image !== undefined) {
-      newsImage=<Block type='div' classes={'card-main-image e-paper e-background-white'}>
+      newsImage=<Block type='div' classes={'card-main-image e-background-white'}>
                   <Image src={cardItem.image.url}  alt={cardItem.image.title} />
                 </Block>;
     }
 
     return (
       <Card>
-        <CardItem classes={'e-background-white'}>
+        <CardItem classes={'e-background-white e-no-margin e-margin-bottom-15'}>
+          {newsImage}
           <CardItemContent classes={'card-supporting-text'}>
             <Text type='h2' classes={'e-title'}>
               {cardItem.title}
@@ -83,7 +84,6 @@ let NewsCardItem = React.createClass({
               {cardItem.description}
             </Text>
           </CardItemContent>
-          {newsImage}
           <CardItemFooter>
             <Block type='div' classes={'e-right'}>
               <Btn>
