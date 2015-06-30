@@ -23,6 +23,9 @@ Top news pagelet for PeopleSoft Interaction Pub (Portal)
 <link rel="stylesheet" href="[path to host]/essence.css" >
 ```
 
+* Using Pagelet Wizard, create a pagelet of type news publication.
+* Apply custom XSL from project folder (transform.xml)
+
 ## Viewing Local Example
 
 * From project folder run `webpack; npm run start`
