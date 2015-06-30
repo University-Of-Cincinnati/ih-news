@@ -9,21 +9,21 @@
     <script type="text/javascript">
 		jQuery(document).ready(function() {
       var ihNews = React.createFactory(IHNewsFeed);
-console.log('factory',ihNews);
-      var ihNewsElement = ihNews(
-        {
-          title: 'Admissions News',
-          ncd:
+
+      var ihNewsElement = ihNews({
+        title: '',
+        ncd:
 						  <xsl:text>{</xsl:text>
 							  <xsl:apply-templates select="." mode="detect" />
 						  <xsl:text>}</xsl:text>
-        });
-console.log('element',ihNewsElement);
-	React.render(ihNewsElement, document.getElementById('admissions_news_portal'));
-});
+      });
+
+      React.render(ihNewsElement, document.getElementById('news_portal'));
+    });
     </script>
-    <div class='e-title'>Admissions News</div>
-    <div id="admissions_news_portal">NC</div>
+    <div id="news_portal"><div class="spinner-loader">
+  Loading…
+</div></div>
   </xsl:template>
 
   <xsl:template match="*" mode="detect">
