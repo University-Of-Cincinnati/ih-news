@@ -15,13 +15,14 @@ Top news pagelet for PeopleSoft Interaction Pub (Portal)
 
 ## Interaction Hub Installation
 
-* Essence CSS must be copied to
+* Essence CSS and fonts must be copied to a web accessible host
 * Using Branding Work Center add the following CSS and script references:
 
+```html
+<link rel="stylesheet" href="[path to host]/icons.css" >
+<link rel="stylesheet" href="[path to host]/essence.css" >
+```
 
-`<link rel="stylesheet" href="[path to ]/icons.css" >`
-`<link rel="stylesheet" href="[path to]/essence.css" >`
-
-## Viewing Example
+## Viewing Local Example
 
 * From project folder run `webpack; npm run start`
