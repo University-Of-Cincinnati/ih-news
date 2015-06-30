@@ -30,3 +30,4 @@ Top news pagelet for PeopleSoft Interaction Pub (Portal)
 ## Viewing Local Example
 
 * From project folder run `webpack; npm run start`
+* Browse to http://localhost:8080/
