@@ -6,7 +6,7 @@ Top news pagelet for PeopleSoft Interaction Pub (Portal)
 
 * Material Design style news cards
 * Leverages delivered News Publication Pagelet
-* Built with React and Essence (http://essence.pearlhq.com/)
+* Built with React (http://facebook.github.io/react/) and Essence (http://essence.pearlhq.com/)
 
 ## Location Installation
 
