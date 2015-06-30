@@ -1,22 +1,40 @@
 import React from 'react/addons';
 
-import {Divider, Btn, BtnItem, Icon, List, ListItem, Card, CardItem, CardItemHeader, CardItemFooter, CardItemContent, Block, Text, Image} from 'react-essence';
+// import all the Essence components used
+import {
+  Btn,
+  BtnItem,
+  Card,
+  CardItem,
+  CardItemHeader,
+  CardItemFooter,
+  CardItemContent,
+  Block,
+  Text,
+  Image
+} from 'react-essence';
+
+import IHNewsCard from './IHNewsCard.jsx';
+import IHEmptyNewsCard from './IHEmptyNewsCard.jsx';
 
 let IHNewsFeed = React.createClass({
+
+  //Get URL for more news stories
   getMoreLink() {
     if (this.props.ncd['news-publication-result']['section-links'].link!==undefined){
       return this.props.ncd['news-publication-result']['section-links'].link.filter((item) => item.viewall === 'yes')[0].text;
     }
   },
 
+  //When view button is clicked, open PeopleSoft modal to view story
   handleClick() {
     //use PeopleSoft function to open URL in modal
     openContentInModal(this.getMoreLink());
   },
 
   render() {
-    let moreButton = null;
 
+    let moreButton = null;
     if (this.props.ncd['news-publication-result']['section-links'].link!==undefined){
       moreButton =
       <BtnItem
@@ -29,14 +47,16 @@ let IHNewsFeed = React.createClass({
     }
 
     return (
-      <div>
+      <div key="ih-news">
         <NewsCards data={this.props.ncd['news-publication-result']['news-publication-top-story'].item} />
-          {moreButton}
+        {moreButton}
       </div>
     );
   },
 
 });
+
+
 
 let NewsCards = React.createClass({
   render: function() {
@@ -44,28 +64,24 @@ let NewsCards = React.createClass({
     let cardNodes = [];
 
     if (this.props.data === undefined){
-      cardNodes.push(
-        <Card>
-          <CardItem classes={'e-background-white e-no-margin e-margin-bottom-15'}>
-            <CardItemContent classes={'card-supporting-text'}>
-              <Text type='h2' classes={'e-title'}>
-                No news found.
-              </Text>
-              <Text type='h4'>
-                Sorry, we were unable to find any news stories.
-              </Text>
-            </CardItemContent>
-          </CardItem>
-        </Card>
-      );
+
+      //Use empty news card if no top stories are found
+      //See IHEmptyNewsCard.jsx
+      cardNodes.push(<IHEmptyNewsCard/>);
+
     } else {
+
+      //Build array of news stories
       cardNodes = this.props.data.map((cardItem) => {
         return (
-          <NewsCardItem data={cardItem}/>
+          //Build news card using top news story properties
+          //See IHNewsCard.jsx
+          <IHNewsCard key={'newscard-' + cardItem.id} data={cardItem}/>
         );
       });
     }
 
+    //render top news stories
     return (
       <div>
         {cardNodes}
@@ -74,55 +90,5 @@ let NewsCards = React.createClass({
   },
 
 });
-
-
-let NewsCardItem = React.createClass({
-  handleClick() {
-    //use PeopleSoft function to open URL in modal
-    openContentInModal(this.props.data.link);
-  },
-
-  render: function() {
-    let cardItem = this.props.data;
-    let newsImage = null;
-
-    if (cardItem.image !== undefined) {
-      newsImage=<Block type='div' classes={'card-main-image e-background-white'}>
-                  <Image src={cardItem.image.url}  alt={cardItem.image.title} />
-                </Block>;
-    }
-
-    return (
-      <Card>
-        <CardItem classes={'e-background-white e-no-margin e-margin-bottom-15'}>
-          {newsImage}
-          <CardItemContent classes={'card-supporting-text'}>
-            <Text type='h2' classes={'e-title'}>
-              {cardItem.title}
-            </Text>
-            <Text type='h4'>
-              {cardItem.description}
-            </Text>
-          </CardItemContent>
-          <CardItemFooter>
-            <Block type='div' classes={'e-right'}>
-              <Btn>
-                <BtnItem
-                    classes={'flat'}
-                    label='View'
-                    type='default'
-                    rippleEffect={false}
-                    onClick={this.handleClick}
-                />
-              </Btn>
-            </Block>
-          </CardItemFooter>
-        </CardItem>
-      </Card>
-    );
-  },
-
-});
-
 
 module.exports = IHNewsFeed;

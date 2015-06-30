@@ -8,7 +8,7 @@ Top news pagelet for PeopleSoft Interaction Pub (Portal)
 * Leverages delivered News Publication Pagelet
 * Built with React (http://facebook.github.io/react/) and Essence (http://essence.pearlhq.com/)
 
-## Location Installation
+## Local Installation
 
 * Install node.js or io.js
 * From project folder run `npm install`
@@ -21,6 +21,7 @@ Top news pagelet for PeopleSoft Interaction Pub (Portal)
 ```html
 <link rel="stylesheet" href="[path to host]/icons.css" >
 <link rel="stylesheet" href="[path to host]/essence.css" >
+<script src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
 ```
 
 * Using Pagelet Wizard, create a pagelet of type news publication.

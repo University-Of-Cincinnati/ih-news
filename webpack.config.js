@@ -11,7 +11,7 @@ var defaultConfig = {
   },
 
   externals: {
-    "react": "React"
+    "react/addons": "React"
   },
   resolve: {
     extensions: ['', '.js', '.json', '.jsx']
